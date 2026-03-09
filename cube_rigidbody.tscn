@@ -7,9 +7,12 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4xt8"]
 resource_name = "Material"
+shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+albedo_color = Color(1, 0.4745098, 0, 1)
 albedo_texture = ExtResource("1")
-roughness = 0.75
-texture_filter = 5
 
 [node name="cube_rigidbody" type="RigidBody3D"]
 
