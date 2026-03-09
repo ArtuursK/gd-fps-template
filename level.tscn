@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://y0rsox5qdoci"]
+[gd_scene load_steps=8 format=3 uid="uid://y0rsox5qdoci"]
 
 [ext_resource type="MeshLibrary" uid="uid://dxc3y3vtd7ins" path="res://cubelib.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://cbvuesb1ptdh4" path="res://player/cubio.tscn" id="2"]
@@ -6,28 +6,18 @@
 [ext_resource type="Script" uid="uid://dyomep2h3s5e6" path="res://level.gd" id="6"]
 [ext_resource type="PackedScene" uid="uid://bftavngs5kq7e" path="res://cube_rigidbody.tscn" id="7"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fiix7"]
-sky_top_color = Color(0.99569374, 0.9533691, 0.6975512, 1)
-sky_horizon_color = Color(0.17254902, 0.49019608, 0.84313726, 1)
-ground_bottom_color = Color(0.03529412, 0.03529412, 0.19607843, 1)
-ground_horizon_color = Color(0.18725663, 0.46666777, 0.9766026, 1)
-ground_curve = 0.25
-
-[sub_resource type="Sky" id="1"]
-sky_material = SubResource("ProceduralSkyMaterial_fiix7")
-radiance_size = 0
-
 [sub_resource type="Environment" id="Environment_jpjfl"]
-background_mode = 2
-sky = SubResource("1")
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_sky_contribution = 0.5
-tonemap_mode = 3
+background_mode = 1
+background_color = Color(0.27058825, 0.7137255, 0.8156863, 1)
 tonemap_white = 6.0
 glow_levels/7 = 1.0
 glow_strength = 0.79
 glow_bloom = 1.0
 glow_blend_mode = 0
+fog_mode = 1
+fog_light_energy = 1.54
+fog_sun_scatter = 0.78
+fog_depth_begin = 5.5
 
 [sub_resource type="BoxShape3D" id="4"]
 
