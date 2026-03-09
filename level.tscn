@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bftavngs5kq7e" path="res://cube_rigidbody.tscn" id="7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fiix7"]
-sky_top_color = Color(0.36, 0.20772, 0.1908, 1)
-sky_horizon_color = Color(0.56, 0.16688, 0.1232, 1)
-ground_bottom_color = Color(0.0352941, 0.0352941, 0.0313726, 1)
-ground_horizon_color = Color(0.42, 0.042, 0, 1)
+sky_top_color = Color(0.99569374, 0.9533691, 0.6975512, 1)
+sky_horizon_color = Color(0.17254902, 0.49019608, 0.84313726, 1)
+ground_bottom_color = Color(0.03529412, 0.03529412, 0.19607843, 1)
+ground_horizon_color = Color(0.18725663, 0.46666777, 0.9766026, 1)
 ground_curve = 0.25
 
 [sub_resource type="Sky" id="1"]
