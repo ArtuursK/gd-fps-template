@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="RigidBody Character 3D"
+config/name="FPS-sample"
 config/description="Rigidbody character demo for 3D using a capsule for the character.
 "
 config/tags=PackedStringArray("3d", "demo", "official", "physics")
@@ -22,6 +22,7 @@ run/max_fps=60
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [input]
 

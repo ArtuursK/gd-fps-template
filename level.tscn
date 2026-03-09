@@ -47,9 +47,10 @@ environment = SubResource("Environment_jpjfl")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.7660441, 0.4545198, -0.4545198, 0, 0.7071068, 0.70710677, 0.64278805, 0.541675, -0.541675, -2.5003772, 6.342201, -2.6333444)
-light_energy = 3.46
+light_color = Color(1, 1, 0.6784314, 1)
+light_energy = 3.0
+light_angular_distance = 15.0
 shadow_enabled = true
-shadow_bias = 0.032
 directional_shadow_mode = 0
 directional_shadow_split_2 = 0.1
 directional_shadow_split_3 = 0.2
@@ -58,7 +59,7 @@ directional_shadow_split_3 = 0.2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.3, 4)
 
 [node name="Princess" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.637668, 13.810911)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.814074, 13.810911)
 
 [node name="Mushroom" parent="Princess" instance=ExtResource("5")]
 
@@ -99,6 +100,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47897, 3.7730658, 1.545415
 
 [node name="cube_rigidbody11" parent="." instance=ExtResource("7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47897, 3.8144991, 0.3257513)
+
+[node name="cube_rigidbody8" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47897, 1.7101996, -1.007834)
+
+[node name="cube_rigidbody12" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47897, 1.7101996, -2.1132996)
+
+[node name="cube_rigidbody13" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47897, 1.7101996, -3.3409681)
+
+[node name="cube_rigidbody14" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47897, 2.7661242, -3.3409681)
+
+[node name="cube_rigidbody15" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47897, 2.7505846, -2.0787451)
+
+[node name="cube_rigidbody16" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47897, 2.720102, -0.9974952)
+
+[node name="cube_rigidbody17" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47897, 3.794843, -1.0084369)
+
+[node name="cube_rigidbody18" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47897, 3.7730658, -2.0956187)
+
+[node name="cube_rigidbody19" parent="." instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47897, 3.8144991, -3.3152826)
 
 [connection signal="body_entered" from="Princess" to="Cubio" method="_on_tcube_body_entered"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
