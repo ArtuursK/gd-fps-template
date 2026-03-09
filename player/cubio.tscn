@@ -69,7 +69,7 @@ offset_left = -354.0
 offset_right = 354.0
 offset_bottom = 50.0
 theme_override_font_sizes/font_size = 20
-text = "Thank You, Cubio! But the Princess is in Another Demo!"
+text = "Nice work!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

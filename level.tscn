@@ -58,8 +58,7 @@ directional_shadow_split_3 = 0.2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2.3, 4)
 
 [node name="Princess" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.25, 3)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.637668, 13.810911)
 
 [node name="Mushroom" parent="Princess" instance=ExtResource("5")]
 
