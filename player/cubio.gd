@@ -6,10 +6,6 @@ const CAMERA_MOUSE_ROTATION_SPEED := 0.003
 const CAMERA_X_ROT_MIN := deg_to_rad(-89.9)
 const CAMERA_X_ROT_MAX := deg_to_rad(70)
 
-const FOV_DEFAULT := 75.0
-const FOV_AIM := 65.0      # smaller = more zoom
-const AIM_ZOOM_TIME := 0.12     # seconds
-
 # Camera and effects
 @export var camera_animation : AnimationPlayer
 @export var camera_base : Node3D
@@ -21,8 +17,6 @@ const AIM_ZOOM_TIME := 0.12     # seconds
 
 @onready var shape_cast = $ShapeCast3D
 @onready var start_position = position
-
-var _was_on_ground := false
 
 # grabbing and shooting
 @export var hold_distance := 3.0
@@ -42,7 +36,6 @@ var _original_gravity_scale := 1.0 # Store original gravity scale
 
 func _ready():
 	camera_camera.make_current()
-	camera_camera.fov = FOV_DEFAULT
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# Ensure a HoldPoint exists and follows the camera look
 	if hold_point == null:
@@ -59,8 +52,7 @@ func _physics_process(_delta):
 	var camera_speed_this_frame = _delta * CAMERA_CONTROLLER_ROTATION_SPEED
 	rotate_camera(camera_move * camera_speed_this_frame)
 	
-	var grounded: bool = on_ground()
-	_was_on_ground = grounded
+	#var grounded: bool = on_ground()
 				
 	# Handle grab / release input (TOGGLE WITH "grab")
 	if Input.is_action_just_pressed("grab"):
@@ -169,8 +161,6 @@ func _try_grab():
 	var body = hit.get("collider")
 	if body == null or not (body is RigidBody3D):
 		return
-	#if only_grabbable_group and not body.is_in_group(grabbable_group_name):
-		#return
 
 	held_body = body
 	
@@ -179,10 +169,10 @@ func _try_grab():
 	_original_gravity_scale = held_body.gravity_scale
 	held_body.gravity_scale = 0.0
 	
-	# 1c. Stop all current movement on the held body immediately.
+	# Stop all current movement on the held body immediately.
 	held_body.linear_velocity = Vector3.ZERO
 	held_body.angular_velocity = Vector3.ZERO
-	# --- Stop any unwanted rotation
+	# Stop any unwanted rotation
 	held_body.angular_damp += 10.0 # Greatly increase angular dampening
 	# ===============================================
 
@@ -207,7 +197,7 @@ func _try_grab():
 	# Keep the anchor at the hold_point (This also sets rotation from the camera).
 	_grab_anchor.global_transform = hold_point.global_transform
 
-	# --- Pivot at the object's local center (Vector3.ZERO) ---
+	# Pivot at the object's local center (Vector3.ZERO) 
 	_grab_offset_local = Vector3.ZERO 
 
 	# Create the joint
@@ -215,7 +205,7 @@ func _try_grab():
 	_pin_joint.node_a = _grab_anchor.get_path()
 	_pin_joint.node_b = held_body.get_path()
 
-	add_child(_pin_joint)                       # <-- add to tree first
+	add_child(_pin_joint) 
 	# Pivot is set where both bodies currently are: target_global_pos
 	_pin_joint.global_position = target_global_pos
 
@@ -242,7 +232,7 @@ func _release(toss: bool = false):
 		var throw_direction = -camera_camera.global_transform.basis.z
 		held_body.apply_central_impulse(throw_direction * 20.0)
 
-	# Restore damping (reverse what we added)
+	# Restore damping 
 	held_body.linear_damp = max(0.0, held_body.linear_damp - 4.0)
 	held_body.angular_damp = max(0.0, held_body.angular_damp - 10.0) # Restore stronger angular damp
 	held_body.angular_damp = max(0.0, held_body.angular_damp) # Clamp to ensure it doesn't go negative
@@ -267,11 +257,11 @@ func _update_hold_anchor():
 	# The grab anchor inherits the hold_point's transform
 	_grab_anchor.global_transform = hold_point.global_transform
 	
-	# --- Update the joint's global pivot position for continuous tracking ---
+	# Update the joint's global pivot position for continuous tracking ---
 	if is_instance_valid(_pin_joint):
 		_pin_joint.global_position = target_pos
 	
-	# 2. Force the held body's rotation to match the anchor's rotation
+	# Force the held body's rotation to match the anchor's rotation
 	# This is what locks the object's view to the camera's orientation.
 	held_body.global_transform.basis = _grab_anchor.global_transform.basis
 	held_body.angular_velocity = Vector3.ZERO
