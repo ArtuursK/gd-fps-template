@@ -10,7 +10,7 @@ friction = 0.5
 height = 1.7
 
 [sub_resource type="CapsuleShape3D" id="5"]
-height = 3.40374
+height = 2.401577
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vn0tg"]
 height = 0.5
@@ -39,17 +39,14 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.957279, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.5564139, 0)
 shape = SubResource("5")
 
 [node name="Target" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Target"]
-transform = Transform3D(0.34202, -0.321394, 0.883022, 0, 0.939693, 0.34202, -0.939693, -0.116978, 0.321394, 0.1107, 1.11288, 0.0234873)
-fov = 74.0
-near = 0.1
-far = 50.0
+transform = Transform3D(0.34201992, -0.32139397, 0.8830223, 0, 0.9396926, 0.34202027, -0.93969274, -0.11697774, 0.32139355, 0.1107, 0.51565284, 0.0234873)
 
 [node name="HoldPoint" type="Marker3D" parent="Target/Camera3D"]
 

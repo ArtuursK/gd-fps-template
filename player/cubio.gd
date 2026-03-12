@@ -13,7 +13,6 @@ const CAMERA_X_ROT_MAX := deg_to_rad(70)
 @onready var camera_camera: Camera3D = $Target/Camera3D
 @export var color_rect : ColorRect
 @export var body_visual: Node3D
-@export var aiming := false
 
 @onready var shape_cast = $ShapeCast3D
 @onready var start_position = position
@@ -115,8 +114,6 @@ func _input(event):
 	
 	if event is InputEventMouseMotion:
 		var camera_speed_this_frame = CAMERA_MOUSE_ROTATION_SPEED
-		if aiming:
-			camera_speed_this_frame *= 0.75
 		rotate_camera(-event.relative * camera_speed_this_frame * scale_factor)
 		
 

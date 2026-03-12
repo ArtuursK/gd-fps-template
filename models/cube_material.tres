@@ -4,7 +4,7 @@
 
 [resource]
 resource_name = "Material"
-albedo_color = Color(0.36347017, 0.6034764, 0, 1)
+albedo_color = Color(0.4837045, 0.577336, 1, 1)
 albedo_texture = ExtResource("1")
 roughness = 0.75
 texture_filter = 5
