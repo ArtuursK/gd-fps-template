@@ -3,6 +3,9 @@
 
 Assets/ideas used in making of this project:
 
+Star texture:
+https://www.solarsystemscope.com/textures/
+
 Godot RigidBody Character 3D Demo
 https://godotengine.org/asset-library/asset/2750
 
