@@ -63,10 +63,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.814074, 13.810911)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("4")
 
-[node name="cube_rigidbody" parent="." instance=ExtResource("7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.416964, 3.3565, 2.6332)
-visible = false
-
 [node name="cube_rigidbody2" parent="." instance=ExtResource("7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47897, 1.7101996, 2.6332)
 
